@@ -1,0 +1,33 @@
+classDiagram
+
+direction LR
+
+class JobPosting {
+
++ String title
+
++ String description
+
++ String location
+
++ String contractType
+
++ Date publicationDate
+
++ PK_id Int
+
++ FK_companyId String
+
+}
+
+class Company {
+
++ String name
+
++ String email
+
++ PK_id Int
+
+}
+
+JobPosting "*" -- "1" Company
