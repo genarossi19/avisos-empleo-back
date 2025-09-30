@@ -2,32 +2,69 @@ classDiagram
 
 direction LR
 
-class JobPosting {
+class Job {
+
++ Int id  
 
 + String title
 
 + String description
 
-+ String location
++ Int idLocation
 
-+ String contractType
++ Int  idContractType
 
-+ Date publicationDate
++ Int companyId 
 
-+ PK_id Int
++ String publishedDate
 
-+ FK_companyId String
++ Int minSalary
+
++ Int maxSalary
+
++ String workMode
+
++ Int experiencie
+
++ Int applicants
 
 }
 
 class Company {
 
++ Int id
+
 + String name
 
-+ String email
++ String email [N]
 
-+ PK_id Int
++ String companyDescription
+
++ String createdAt
+
++ String imgUrl
+
 
 }
 
+class TipoContrato{
+    + Int PK_tipoContratoId
+    + String tipoContrato
+}
+
+class Localidad{
+    + Int id
+    + Int provinciaId
+    + String localityName
+}
+
+class Provincia{
+    
+    + Int id
+    + String provinciaName
+}
+
 JobPosting "*" -- "1" Company
+JobPosting "*" -- "1" TipoContrato
+JobPosting "*" -- "1" Localidad
+Localidad "*" -- "1" Provincia
