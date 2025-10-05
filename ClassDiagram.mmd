@@ -64,7 +64,7 @@ class Provincia{
     + String provinciaName
 }
 
-JobPosting "*" -- "1" Company
-JobPosting "*" -- "1" TipoContrato
-JobPosting "*" -- "1" Localidad
+Job "*" -- "1" Company
+Job "*" -- "1" TipoContrato
+Job "*" -- "1" Localidad
 Localidad "*" -- "1" Provincia

@@ -4,7 +4,9 @@ import data from "../data.js";
 import { JobListDTO, JobDetailDTO } from "./job.dto.js";
 
 const getAllJobs = (req, res) => {
-  const jobsList = data.jobs.map((job) => JobListDTO(job));
+  const jobsList = data.jobs.map((job) =>
+    JobListDTO(job, data.companies, data.localidades, data.contractTypes)
+  );
   res.json(jobsList);
 };
 
@@ -12,7 +14,9 @@ const getJobById = (req, res) => {
   const id = parseInt(req.params.id);
   const job = data.jobs.find((j) => j.id === id);
   if (job) {
-    res.json(JobDetailDTO(job));
+    res.json(
+      JobDetailDTO(job, data.companies, data.localidades, data.contractTypes)
+    );
   } else {
     res.status(404).json({ error: "Job not found" });
   }

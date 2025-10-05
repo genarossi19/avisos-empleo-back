@@ -1,7 +1,7 @@
 // Datos hardcodeados para pruebas
 import Job from "./job/job.model.js";
 import Company from "./company/company.model.js";
-import TipoContrato from "./tipoContrato/tipoContrato.model.js";
+import ContractType from "./contractType/contractType.model.js";
 import Localidad from "./localidad/localidad.model.js";
 import Provincia from "./provincia/provincia.model.js";
 
@@ -9,7 +9,9 @@ const jobs = [
   new Job(
     1,
     "Desarrollador FullStack",
-    "Desarrolla aplicaciones web",
+    "Desarrolla aplicaciones web modernas con Node.js y React.",
+    `Buscamos un desarrollador FullStack para sumarse a un equipo ágil. 
+    Deberá trabajar en el desarrollo de aplicaciones web escalables, mantener buenas prácticas de código, colaborar con diseñadores y otros desarrolladores, y participar en la toma de decisiones técnicas. Se valorará experiencia en cloud y CI/CD.`,
     1,
     1,
     1,
@@ -23,7 +25,9 @@ const jobs = [
   new Job(
     2,
     "Diseñador UX/UI",
-    "Diseña interfaces atractivas",
+    "Diseña interfaces atractivas y funcionales para apps web.",
+    `Responsable de crear experiencias de usuario intuitivas y visualmente atractivas. 
+    Trabajará junto a desarrolladores y product owners para definir wireframes, prototipos y guías de estilo. Se requiere manejo avanzado de Figma y conocimientos de accesibilidad.`,
     2,
     2,
     2,
@@ -55,9 +59,9 @@ const companies = [
   ),
 ];
 
-const tipoContratos = [
-  new TipoContrato(1, "Tiempo Completo"),
-  new TipoContrato(2, "Medio Tiempo"),
+const contractTypes = [
+  new ContractType(1, "Full Time", "full-time"),
+  new ContractType(2, "Half Time", "half-time"),
 ];
 
 const provincias = [
@@ -73,7 +77,7 @@ const localidades = [
 export default {
   jobs,
   companies,
-  tipoContratos,
+  contractTypes,
   provincias,
   localidades,
 };

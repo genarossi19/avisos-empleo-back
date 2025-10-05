@@ -6,7 +6,7 @@ dotenv.config();
 
 import jobRouter from "./src/job/job.routes.js";
 import companyRouter from "./src/company/company.routes.js";
-import tipoContratoRouter from "./src/tipoContrato/tipoContrato.routes.js";
+import contractTypeRouter from "./src/contractType/contractType.routes.js";
 import localidadRouter from "./src/localidad/localidad.routes.js";
 import provinciaRouter from "./src/provincia/provincia.routes.js";
 
@@ -19,7 +19,7 @@ const port = process.env.PORT;
 // Rutas CRUD
 app.use("/job", jobRouter);
 app.use("/company", companyRouter);
-app.use("/tipoContrato", tipoContratoRouter);
+app.use("/contractType", contractTypeRouter);
 app.use("/localidad", localidadRouter);
 app.use("/provincia", provinciaRouter);
 

@@ -3,7 +3,8 @@ export default class Job {
   constructor(
     id,
     title,
-    description,
+    shortDescription,
+    longDescription,
     idLocation,
     idContractType,
     companyId,
@@ -16,7 +17,8 @@ export default class Job {
   ) {
     this.id = id;
     this.title = title;
-    this.description = description;
+    this.shortDescription = shortDescription;
+    this.longDescription = longDescription;
     this.idLocation = idLocation;
     this.idContractType = idContractType;
     this.companyId = companyId;
