@@ -6,7 +6,7 @@ export function JobListDTO(job, companies, localidades, contractTypes) {
   const contractType = contractTypes.find((tc) => tc.id === job.idContractType);
 
   const companyMinimal = company
-    ? { id: company.id, name: company.name }
+    ? { id: company.id, name: company.name, imgUrl: company.imgUrl }
     : null;
   const localityGeneric = localidad
     ? { id: localidad.id, name: localidad.localityName }
@@ -14,6 +14,12 @@ export function JobListDTO(job, companies, localidades, contractTypes) {
   const contractTypeGeneric = contractType
     ? { id: contractType.id, name: contractType.name }
     : undefined;
+
+  // ✅ Calcular featured
+  const published = new Date(job.publishedDate);
+  const today = new Date();
+  const diffDays = Math.floor((today - published) / (1000 * 60 * 60 * 24));
+  const featured = diffDays <= 10;
 
   return {
     id: job.id,
@@ -28,6 +34,7 @@ export function JobListDTO(job, companies, localidades, contractTypes) {
     workMode: job.workMode,
     experiencie: job.experiencie,
     company: companyMinimal,
+    featured,
   };
 }
 
